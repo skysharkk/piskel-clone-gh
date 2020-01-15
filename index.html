@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"  rel="stylesheet">
+    <title>Piskel clone</title>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+<header class="header">
+    <i class="fas fa-bars"></i>
+    <h1 class="header_title">Piskel clone</h1>
+</header>
+<main>
+    <section class="section">
+        <div class="section-container">
+            <div class="aside-container">
+                <div class="action">
+                    <ul class="action--list">
+                        <li class="action--item action--item-radio_btn">
+                            <input type="radio" id="input_radio_1" class="input--radio" name="rad" checked value="1">
+                            <label class="input_container" for="input_radio_1">
+                                <span class="input_container--mark"></span>
+                            </label>
+                            <input type="radio" id="input_radio_2" class="input--radio" name="rad" value="2">
+                            <label class="input_container" for="input_radio_2">
+                                <span class="input_container--mark"></span>
+                            </label>
+                            <input type="radio" id="input_radio_3" class="input--radio" name="rad" value="3">
+                            <label class="input_container" for="input_radio_3">
+                                <span class="input_container--mark"></span>
+                            </label>
+                            <input type="radio" id="input_radio_4" class="input--radio" name="rad" value="4">
+                            <label class="input_container" for="input_radio_4">
+                                <span class="input_container--mark"></span>
+                            </label>
+                        </li>
+                        <li class="action--item">
+                            <button class="action--bucket action--button" type="button">
+                                <i class="fas fa-fill-drip"></i>
+                                Paint bucket
+                            </button>
+                        </li>
+                        <li class="action--item">
+                            <button class="action--grab_color action--button" type="button">
+                                <i class="fas fa-eye-dropper"></i>
+                                Choose color
+                            </button>
+                        </li>
+                        <li class="action--item">
+                            <button class="action--pencil action--button" type="button">
+                                <i class="fas fa-pencil-alt"></i>
+                                Pencil
+                            </button>
+                        </li>
+                        <li class="action--item">
+                            <button class="action--stroke action--button" type="button">
+                                <i class="fas fa-arrows-alt-v"></i>
+                                Stroke
+                            </button>
+                        </li>
+                        <li class="action--item">
+                            <button class="action--eraser action--button" type="button">
+                                <i class="fas fa-eraser"></i>
+                                Eraser
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="color">
+                    <ul class="color--list">
+                        <li class="color--item">
+                            <input class="color--input color--input-current" id="current" name="current" type="color" value="#000000">
+                            <label for="current">Current color</label>
+                        </li>
+                        <li class="color--item" id="prev-color">
+                            <input class="color--input color--input-prev" id="prev" name="prev" type="color">
+                            <label for="prev">Prev color</label>
+                        </li>
+                        <li class="color--item color--item-red">
+                            <input class="color--input color--input-red" id="red" name="prev" type="color" value="#f74141">
+                            <label for="red">red</label>
+                        </li>
+                        <li class="color--item color--item-blue">
+                            <input class="color--input color--input-blue" id="blue" name="prev" type="color" value="#00bcd4">
+                            <label for="blue">blue</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="frames_container">
+                <ul class="frames_list"></ul>
+                <button class="add_frame_button">
+                    <i class="fas fa-plus add_frame_button--icon"></i>
+                    <span class="add_frame_button--text">
+                                Add new frame
+                            </span>
+                </button>
+            </div>
+            <div class="canvas_wrapper">
+                    <canvas class="canvas" height="512px" width="512px"></canvas>
+                    <canvas class="canvas_layer disable" height="512px" width="512px"></canvas>
+            </div>
+            <ul class="size_switcher">
+                <li class="size_switcher--item">
+                    <button class="size_switcher--button size_switcher--button-1x1" data-size="512">
+                        <img src="assets/resize.svg" alt="icon" class="size_switcher--icon">
+                        1x1
+                    </button>
+                </li>
+                <li class="size_switcher--item">
+                    <button class="size_switcher--button size_switcher--button-2x2" data-size="256">
+                        <img src="assets/resize.svg" alt="icon" class="size_switcher--icon">
+                        2x2
+                    </button>
+                </li>
+                <li class="size_switcher--item">
+                    <button class="size_switcher--button size_switcher--button-4x4" data-size="128">
+                        <img src="assets/resize.svg" alt="icon" class="size_switcher--icon">
+                        4x4
+                    </button>
+                </li>
+                <li class="size_switcher--item">
+                    <button class="size_switcher--button size_switcher--button-16x16" data-size="32">
+                        <img src="assets/resize.svg" alt="icon" class="size_switcher--icon">
+                        16x16
+                    </button>
+                </li><li class="size_switcher--item">
+                <button class="size_switcher--button size_switcher--button-32x32" data-size="16">
+                    <img src="assets/resize.svg" alt="icon" class="size_switcher--icon">
+                    32x32
+                </button>
+            </li><li class="size_switcher--item">
+                <button class="size_switcher--button size_switcher--button-128x128" data-size="4">
+                    <img src="assets/resize.svg" alt="icon" class="size_switcher--icon">
+                    128x128
+                </button>
+            </li><li class="size_switcher--item">
+                <button class="size_switcher--button size_switcher--button-256x256" data-size="2">
+                    <img src="assets/resize.svg" alt="icon" class="size_switcher--icon">
+                    256x256
+                </button>
+            </li><li class="size_switcher--item">
+                <button class="size_switcher--button size_switcher--button-512x512" data-size="1">
+                    <img src="assets/resize.svg" alt="icon" class="size_switcher--icon">
+                    512x512
+                </button>
+            </li>
+            </ul>
+        </div>
+    </section>
+</main>
+<script type="text/javascript" src="app.bundle.js"></script></body>
+</html>
